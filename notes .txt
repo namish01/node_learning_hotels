@@ -1,0 +1,51 @@
+
+// let callBack=()=>{
+//     console.log("I am calling a callback function:");
+// }
+// let add=(a,b,callBack)=>{
+// let result =a+b;
+// console.log(`result: ${result}`);
+// callBack();
+// }
+// add(2,3,()=>{
+//     console.log("I am calling a call back function:")
+// });
+
+
+// FS :FILE SYSTEM MODULE AND OS MODULE:
+// var fs=require('fs');
+// var os=require('os');
+// var user =os.userInfo(user);
+// console.log(user);
+// console.log(user.username);
+
+// fs.appendFile('greetings.txt',"hey Namish\n",()=>{
+//     console.log("file has been created!")
+// })
+
+// IMPORTING FILES:
+// var notes =require("./notes.js");
+// let age=notes.age;
+//  console.log(age);
+// console.log( notes.add(2,3));
+
+// // Importing lodash:
+// var _=require('lodash');
+// const arr=["person","animal","person",1,3,4,2,4,4,4,2,2,4,"name","age"];
+// var filter=_.uniq(arr);
+// console.log(filter);
+
+// CONVERSION OF JSON:
+// JSON TO OBJECT:
+// let json='{"name":"Namish bhargav","age":"22","gender":"Male"}';
+// let object=JSON.parse(json);
+// console.log(object.name);
+
+// // OBJECT TO JSON:
+// let Object={
+//     Name:"Namish Bhargav",
+//     age:22,
+//     gender:"male"
+// }
+// let jsonString=JSON.stringify(Object);
+// console.log(jsonString);
