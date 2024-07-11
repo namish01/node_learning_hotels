@@ -1,11 +1,10 @@
 // RESPONSIBLE FOR ESTABLISHING CONNECTION BETWEEN NODE JS AND MONGO DB THROUGH MONGOOSE LIBERARY:
 const mongoose=require('mongoose');
+require('dotenv').config();
 // DEFINE THE MONGODB CONNECTION URL:
 //(mongodb://127.0.0.1:27017/YOURDB) for seeting up locally:
-// const mongoURL=  'mongodb://127.0.0.1:27017/hotels'
-
-
-const mongoURL='mongodb+srv://namish_03:namish123@atlascluster.yg1x64a.mongodb.net/'
+//  const mongoURL= process.env.MONGODB_URL_LOCALE;
+const mongoURL=process.env.MONGODB_URL;
 // SET UP MONGODB CONNECTION:
 mongoose.connect(mongoURL,{
     useNewUrlParser:true,
