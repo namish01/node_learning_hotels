@@ -46,4 +46,44 @@ router.post('/',async(req,res)=>{
 
   })
 
+  router.put('/:id', async (req, res) => {
+    try {
+      const personId = req.params.id;
+      const updatedData = req.body;
+  
+      // Find the document by ID and update it with the new data
+      const response = await menu.findByIdAndUpdate(personId, updatedData, {
+        new: true,
+        runValidators: true,
+      });
+  
+      if (!response) {
+        return res.status(404).json({ Error: 'Person not found' });
+      }
+      console.log('Data updated');
+      res.status(200).json(response);
+  
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Internal server error' });
+    }
+  });
+
+  router.delete('/:id', async (req, res) => {
+    try {
+      const personId = req.params.id;
+      // Find the document by ID and update it with the new data
+      const response = await menu.findByIdAndDelete(personId);
+      if (!response) {
+        return res.status(404).json({ Error: 'Person not found' });
+      }
+      console.log('Data deleted succesfully:');
+      res.status(200).json({message:'person deleted successfully:...'});
+  
+    } catch (err) {
+      console.error(err);
+      res.status(500).json({ error: 'Internal server error' });
+    }
+  });
+
   module.exports=router;
