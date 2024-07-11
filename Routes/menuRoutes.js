@@ -58,7 +58,7 @@ router.post('/',async(req,res)=>{
       });
   
       if (!response) {
-        return res.status(404).json({ Error: 'Person not found' });
+        return res.status(404).json({ Error: 'item not found' });
       }
       console.log('Data updated');
       res.status(200).json(response);
@@ -75,10 +75,10 @@ router.post('/',async(req,res)=>{
       // Find the document by ID and update it with the new data
       const response = await menu.findByIdAndDelete(personId);
       if (!response) {
-        return res.status(404).json({ Error: 'Person not found' });
+        return res.status(404).json({ Error: 'item not found' });
       }
-      console.log('Data deleted succesfully:');
-      res.status(200).json({message:'person deleted successfully:...'});
+      console.log('item deleted succesfully:');
+      res.status(200).json({message:'item deleted successfully:...'});
   
     } catch (err) {
       console.error(err);
